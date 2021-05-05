@@ -1,15 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
+import { 
+    Route,
+    Link
+  } from 'react-router-dom';
 
 function Header() {
     return (
         <Nav>
-            <Logo src="/images/logo.svg" />
+            <Link to="/" style={{ textDecoration: 'none' }}>
+                <Logo src="/images/logo.svg" />
+            </Link>
             <NavMenu>
-                <a>
-                    <img src="/images/home-icon.svg" />
-                    <span>HOME</span> 
-                </a>
+                <Link to="/" style={{ color: 'transparent', textDecoration: 'none' }}>
+                    <a>
+                        <img src="/images/home-icon.svg" />
+                        <span>HOME</span> 
+                    </a>
+                </Link>
                 <a>
                     <img src="/images/search-icon.svg" />
                     <span>SEARCH</span> 
@@ -44,6 +52,7 @@ const Nav = styled.nav`
     display: flex;
     align-items: center;
     padding: 0 36px;
+    overflow-x: hidden;
 `
 
 const Logo = styled.img`
@@ -61,6 +70,7 @@ const NavMenu = styled.div`
         align-items: center;
         padding: 0 12px;
         cursor: pointer;
+        color: white;
 
         img {
             height: 20px;
